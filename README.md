@@ -23,6 +23,18 @@ Orbyt er en plattform som lar deg:
 | `Avtale/` | Kontrakter og avtaler |
 | `CONTEXT.md` | Prosjektkontekst og STUDIO X skills |
 
+## Subdomener (Vercel)
+
+Hver prototype har eget subdomene via `vercel.json`:
+
+| Subdomene | Innhold |
+|-----------|---------|
+| `app.*` | Mobil app (`app.html`) |
+| `dashboard.*` | Web dashboard (`dashboard.html`) |
+| `linkinbio.*` | Link-in-Bio side (`linkinbio.html`) |
+
+**Sett opp:** Legg til domenene i Vercel prosjektinnstillinger (f.eks. `app.orbyt.no`, `dashboard.orbyt.no`, `linkinbio.orbyt.no`).
+
 ## Prototype
 
 Åpne prototypene i `prototype/`:

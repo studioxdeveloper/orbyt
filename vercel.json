@@ -1,0 +1,24 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/prototype/app.html",
+      "has": [{ "type": "host", "value": { "pre": "app." } }]
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/prototype/dashboard.html",
+      "has": [{ "type": "host", "value": { "pre": "dashboard." } }]
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/prototype/linkinbio.html",
+      "has": [{ "type": "host", "value": { "pre": "linkinbio." } }]
+    },
+    {
+      "source": "/",
+      "destination": "/prototype/app.html"
+    }
+  ]
+}
