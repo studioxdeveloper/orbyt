@@ -1,4 +1,4 @@
-# My Social Life
+# Orbyt
 
 > Digital HUB for sosiale medier — publiseringsplattform for influencere og SMB-er.
 
@@ -6,7 +6,7 @@
 
 ## Prosjektoversikt
 
-My Social Life er en plattform som lar deg:
+Orbyt er en plattform som lar deg:
 
 - ✅ Publisere innhold til flere sosiale medier fra ett sted (Instagram, Facebook, LinkedIn, YouTube, TikTok, X)
 - ✅ Planlegge innlegg med publiseringskalender
