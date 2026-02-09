@@ -25,15 +25,15 @@ Orbyt er en plattform som lar deg:
 
 ## Subdomener (Vercel)
 
-Hver prototype har eget subdomene via `vercel.json`:
+Hver prototype har eget domene via `vercel.json`:
 
-| Subdomene | Innhold |
-|-----------|---------|
-| `app.*` | Mobil app (`app.html`) |
-| `dashboard.*` | Web dashboard (`dashboard.html`) |
-| `linkinbio.*` | Link-in-Bio side (`linkinbio.html`) |
+| Domene | Prototype |
+|--------|-----------|
+| `orbytapp.studiox.tech` | Mobil app (`app.html`) |
+| `orbytdashboard.studiox.tech` | Web dashboard (`dashboard.html`) |
+| `orbytlink.studiox.tech` | Link-in-Bio side (`linkinbio.html`) |
 
-**Sett opp:** Legg til domenene i Vercel prosjektinnstillinger (f.eks. `app.orbyt.no`, `dashboard.orbyt.no`, `linkinbio.orbyt.no`).
+**CNAME-verifisering:** Domenene verifiseres via CNAME-poster som peker til Vercel.
 
 ## Prototype
 

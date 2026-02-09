@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "devDependencies": {
+    "@vercel/functions": "^3.4.1",
     "vite": "^6.0.0"
   }
 }
