@@ -29,6 +29,7 @@ Hver prototype har eget domene via `vercel.json`:
 
 | Domene | Prototype |
 |--------|-----------|
+| `orbyttimeline.studiox.tech` | Prosjekttidslinje (`index.html`) |
 | `orbytapp.studiox.tech` | Mobil app (`app.html`) |
 | `orbytdashboard.studiox.tech` | Web dashboard (`dashboard.html`) |
 | `orbytlink.studiox.tech` | Link-in-Bio side (`linkinbio.html`) |

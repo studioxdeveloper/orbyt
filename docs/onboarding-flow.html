@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Orbyt — Onboarding-flyt</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0f0f12;
+      --surface: #18181c;
+      --surface-hover: #1f1f24;
+      --text: #e8e6e3;
+      --text-muted: #8b8680;
+      --accent-0: #6366f1;
+      --accent-1: #22c55e;
+      --accent-2: #f59e0b;
+      --accent-3: #ec4899;
+      --accent-4: #06b6d4;
+      --border: #2a2a30;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'DM Sans', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      padding: 3rem 2rem;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    header {
+      margin-bottom: 2.5rem;
+    }
+
+    h1 {
+      font-size: 1.75rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.25rem;
+    }
+
+    .subtitle {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.85rem;
+      margin-bottom: 1.5rem;
+      transition: color 0.15s;
+    }
+
+    .back-link:hover {
+      color: var(--accent-0);
+    }
+
+    /* Purpose box */
+    .purpose-box {
+      background: rgba(99, 102, 241, 0.1);
+      border: 1px solid rgba(99, 102, 241, 0.3);
+      border-radius: 8px;
+      padding: 1rem 1.25rem;
+      margin-bottom: 2.5rem;
+      font-size: 0.9rem;
+    }
+
+    .purpose-box strong {
+      color: var(--accent-0);
+    }
+
+    /* Flow diagram */
+    .flow-diagram {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 2.5rem;
+      padding: 1.5rem;
+      background: var(--surface);
+      border-radius: 12px;
+      border: 1px solid var(--border);
+    }
+
+    .flow-step {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .flow-node {
+      padding: 0.6rem 1rem;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .flow-node.step-1 { background: linear-gradient(135deg, var(--accent-0), #818cf8); color: white; }
+    .flow-node.step-2 { background: linear-gradient(135deg, var(--accent-1), #4ade80); color: #0a0a0a; }
+    .flow-node.step-3 { background: linear-gradient(135deg, var(--accent-2), #fbbf24); color: #0a0a0a; }
+    .flow-node.step-4 { background: linear-gradient(135deg, var(--accent-3), #f472b6); color: white; }
+    .flow-node.step-5 { background: linear-gradient(135deg, var(--accent-4), #22d3ee); color: #0a0a0a; }
+
+    .flow-arrow {
+      color: var(--text-muted);
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+
+    @media (max-width: 640px) {
+      .flow-diagram {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .flow-arrow { transform: rotate(90deg); }
+    }
+
+    /* Step cards */
+    .steps-section {
+      margin-top: 1rem;
+    }
+
+    .steps-section h2 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .step-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 1rem;
+      transition: border-color 0.15s;
+    }
+
+    .step-card:hover {
+      border-color: rgba(99, 102, 241, 0.3);
+    }
+
+    .step-card-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .step-number {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+
+    .step-card.step-1 .step-number { background: var(--accent-0); }
+    .step-card.step-2 .step-number { background: var(--accent-1); }
+    .step-card.step-3 .step-number { background: var(--accent-2); }
+    .step-card.step-4 .step-number { background: var(--accent-3); }
+    .step-card.step-5 .step-number { background: var(--accent-4); }
+
+    .step-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+
+    .step-desc {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+      line-height: 1.5;
+    }
+
+    .rationale {
+      background: rgba(99, 102, 241, 0.08);
+      border-left: 3px solid var(--accent-0);
+      padding: 1rem 1.25rem;
+      border-radius: 0 8px 8px 0;
+      font-size: 0.9rem;
+    }
+
+    .rationale-title {
+      font-weight: 600;
+      color: var(--accent-0);
+      margin-bottom: 0.35rem;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .rationale p {
+      margin: 0;
+      color: var(--text);
+      line-height: 1.5;
+    }
+
+    .rationale p + p {
+      margin-top: 0.5rem;
+    }
+
+    .prototype-ref {
+      margin-top: 1rem;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .prototype-ref code {
+      font-family: 'JetBrains Mono', monospace;
+      background: rgba(99, 102, 241, 0.15);
+      padding: 0.15rem 0.4rem;
+      border-radius: 4px;
+      color: var(--accent-0);
+    }
+
+    /* API/data reference */
+    .api-reference {
+      margin-top: 2rem;
+      padding: 1.25rem;
+      background: rgba(34, 197, 94, 0.08);
+      border: 1px solid rgba(34, 197, 94, 0.3);
+      border-radius: 8px;
+      font-size: 0.85rem;
+    }
+
+    .api-reference h3 {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--accent-1);
+      margin-bottom: 0.5rem;
+    }
+
+    .api-reference ul {
+      list-style: none;
+      color: var(--text-muted);
+    }
+
+    .api-reference li {
+      padding: 0.2rem 0;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.8rem;
+    }
+
+    @media (max-width: 768px) {
+      body { padding: 1.5rem 1rem; }
+      .flow-node { font-size: 0.8rem; padding: 0.5rem 0.75rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <a href="index.html" class="back-link">← Tilbake til dokumentasjon</a>
+
+    <header>
+      <h1>Onboarding-flyt</h1>
+      <p class="subtitle">Brukeropplevelse fra registrering til første publisering · Orbyt / My Social Life</p>
+    </header>
+
+    <div class="purpose-box">
+      <strong>Formål:</strong> Dokumentet viser teamets tankegang rundt onboarding og produktflyt. Brukes til avklaring med integrasjonsteam, UX-validering og estimat.
+    </div>
+
+    <div class="flow-diagram">
+      <div class="flow-step">
+        <span class="flow-node step-1">1. Registrer</span>
+      </div>
+      <span class="flow-arrow">→</span>
+      <div class="flow-step">
+        <span class="flow-node step-2">2. Velkommen</span>
+      </div>
+      <span class="flow-arrow">→</span>
+      <div class="flow-step">
+        <span class="flow-node step-3">3. Koble plattformer</span>
+      </div>
+      <span class="flow-arrow">→</span>
+      <div class="flow-step">
+        <span class="flow-node step-4">4. Opprett innhold</span>
+      </div>
+      <span class="flow-arrow">→</span>
+      <div class="flow-step">
+        <span class="flow-node step-5">5. Publiser</span>
+      </div>
+    </div>
+
+    <section class="steps-section">
+      <h2>Steg med tankegang</h2>
+
+      <div class="step-card step-1">
+        <div class="step-card-header">
+          <span class="step-number">1</span>
+          <span class="step-title">Registrering / Logg inn</span>
+        </div>
+        <p class="step-desc">
+          Bruker oppretter konto med e-post eller logger inn. Autentisering håndteres av Orbyt (Convex/Supabase Auth). Facebook/Google som login-provider er valgfritt for MVP.
+        </p>
+        <div class="rationale">
+          <div class="rationale-title">Tankegang</div>
+          <p>
+            Vi starter med e-post + passord for å minimere avhengigheter til Meta/Google i fasen før OAuth er klar. Bruker oppretter én Orbyt-konto som senere kobles til flere plattformer. Enkel registrering = lavere terskel for å prøve appen.
+          </p>
+        </div>
+        <p class="prototype-ref">Referanse: <code>app.html</code> (login-skjerm i prototype) · API: <code>POST /api/auth/register</code>, <code>POST /api/auth/login</code></p>
+      </div>
+
+      <div class="step-card step-2">
+        <div class="step-card-header">
+          <span class="step-number">2</span>
+          <span class="step-title">Velkommen / Introduksjon</span>
+        </div>
+        <p class="step-desc">
+          Valgfritt velkomstskjerm som forklarer verdien av Orbyt: «Publiser til alle plattformer fra ett sted.» Kan inneholde kort intro til Orbit-visualisering og neste steg (koble plattformer).
+        </p>
+        <div class="rationale">
+          <div class="rationale-title">Tankegang</div>
+          <p>
+            Vi vurderer en kort velkomst for nye brukere, men ønsker ikke lang «tutorial» som blokerer. Alternativ: Gå rett til Feed med CTA «Koble plattformer» hvis ingen kontoer er tilkoblet. MVP kan starte uten dedikert velkomst og heller bruke empty state med tydelig CTA.
+          </p>
+        </div>
+        <p class="prototype-ref">Referanse: Kan være ny skjerm eller utvidet empty state på Feed</p>
+      </div>
+
+      <div class="step-card step-3">
+        <div class="step-card-header">
+          <span class="step-number">3</span>
+          <span class="step-title">Koble plattformer (OAuth)</span>
+        </div>
+        <p class="step-desc">
+          Bruker klikker «Koble til» for Instagram, Facebook eller YouTube. Omdirigeres til Meta/Google OAuth. Etter godkjenning returneres bruker til Orbyt med tilkoblet konto. For Facebook: bruker velger Page(s). For Instagram: krever Professional-konto koblet til Facebook Page.
+        </p>
+        <div class="rationale">
+          <div class="rationale-title">Tankegang</div>
+          <p>
+            Plattformer kobles én etter én. Vi viser tydelig status (tilkoblet / ikke tilkoblet) og hvilke kontoer som kan publiseres til. <strong>Token-utløp:</strong> Meta sine tokens utløper etter 60 dager uten refresh-mulighet. Bruker må koble på nytt. Vi bør varsle før utløp (f.eks. 7–14 dager) og vise enkel «Koble på nytt»-flyt.
+          </p>
+        </div>
+        <p class="prototype-ref">Referanse: <code>app.html</code> Profil → «Koble til plattformer» · <code>dashboard.html</code> Tilkoblinger · API: <code>GET /api/auth/oauth/:platform</code>, <code>GET /api/auth/oauth/:platform/callback</code></p>
+      </div>
+
+      <div class="step-card step-4">
+        <div class="step-card-header">
+          <span class="step-number">4</span>
+          <span class="step-title">Opprett innhold</span>
+        </div>
+        <p class="step-desc">
+          Bruker går til Create-skjermen, velger bilde eller video (opplasting går via Mux for video), skriver caption. Velger hvilke plattformer innlegget skal publiseres til. Kan bruke AI for å generere/forbedre tekst.
+        </p>
+        <div class="rationale">
+          <div class="rationale-title">Tankegang</div>
+          <p>
+            Vi viser kun plattformer som er tilkoblet. Bilde lastes direkte; video går via Mux (Direct Upload → transkodering → MP4 URL brukes ved publisering). MVP fokuserer på bilde + caption og video + caption. Avanserte features (musikk, tagging, geolokasjon) vurderes til fase 2. Validering på klientsiden før publisering reduserer feil.
+          </p>
+        </div>
+        <p class="prototype-ref">Referanse: <code>app.html</code> Create-skjerm · API: <code>POST /api/videos/upload-url</code>, <code>POST /api/posts</code></p>
+      </div>
+
+      <div class="step-card step-5">
+        <div class="step-card-header">
+          <span class="step-number">5</span>
+          <span class="step-title">Publiser eller planlegg</span>
+        </div>
+        <p class="step-desc">
+          Bruker velger «Publiser nå» eller «Planlegg innlegg». Ved planlegging velges dato og tid. Backend (cron/scheduler) kjører planlagte poster til valgte plattformer. Status vises per plattform (pending / published / failed).
+        </p>
+        <div class="rationale">
+          <div class="rationale-title">Tankegang</div>
+          <p>
+            Planlagt publisering er i MVP-scope — det er en sentral verdi for brukere. Vi bruker server-side scheduling (cron-jobs, kø) siden Meta/YouTube ikke tilbyr native scheduling. Bruker bør se tydelig når posten er planlagt og få varsel ved feil (f.eks. token utløpt).
+          </p>
+        </div>
+        <p class="prototype-ref">Referanse: <code>app.html</code> Create «Planlegg innlegg», Kalender · API: <code>POST /api/posts/:id/publish</code>, <code>POST /api/posts/:id/schedule</code></p>
+      </div>
+    </section>
+
+    <div class="api-reference">
+      <h3>Integrasjonsrelevante API-kall (onboarding)</h3>
+      <ul>
+        <li>POST /api/auth/register · POST /api/auth/login</li>
+        <li>GET /api/auth/oauth/:platform → OAuth redirect</li>
+        <li>GET /api/auth/oauth/:platform/callback → Token exchange</li>
+        <li>GET /api/accounts → Liste tilkoblede kontoer</li>
+        <li>POST /api/videos/upload-url → Mux Direct Upload</li>
+        <li>POST /api/posts · POST /api/posts/:id/publish · POST /api/posts/:id/schedule</li>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>

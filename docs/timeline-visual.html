@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Orbyt — Prosjekttidslinje</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0f0f12;
+      --surface: #18181c;
+      --surface-hover: #1f1f24;
+      --text: #e8e6e3;
+      --text-muted: #8b8680;
+      --accent-0: #6366f1;
+      --accent-1: #22c55e;
+      --accent-2: #f59e0b;
+      --accent-3: #ec4899;
+      --accent-4: #06b6d4;
+      --border: #2a2a30;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'DM Sans', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      padding: 3rem 2rem;
+      line-height: 1.5;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    header {
+      margin-bottom: 3rem;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 1.75rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.25rem;
+    }
+
+    .subtitle {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    /* Month scale */
+    .month-scale {
+      display: flex;
+      margin-bottom: 0.25rem;
+      padding-left: 140px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+
+    .month-scale span {
+      flex: 1;
+      text-align: center;
+      min-width: 0;
+    }
+
+    .month-scale .m-des { flex: 2; }
+    .month-scale .m-jan { flex: 3; }
+    .month-scale .m-feb { flex: 4; }
+    .month-scale .m-mar { flex: 5; }
+    .month-scale .m-apr { flex: 5; }
+    .month-scale .m-mai { flex: 3; }
+
+    /* Week scale */
+    .week-scale {
+      display: flex;
+      margin-bottom: 1rem;
+      padding-left: 140px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      color: var(--text-muted);
+    }
+
+    .week-scale span {
+      flex: 1;
+      text-align: center;
+      min-width: 0;
+    }
+
+    .week-scale span[title] {
+      cursor: help;
+    }
+
+    /* Main timeline */
+    .timeline {
+      background: var(--surface);
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      overflow: hidden;
+      margin-bottom: 2rem;
+    }
+
+    .timeline-row {
+      display: flex;
+      align-items: center;
+      min-height: 56px;
+      border-bottom: 1px solid var(--border);
+      transition: background 0.15s;
+    }
+
+    .timeline-row:hover {
+      background: var(--surface-hover);
+    }
+
+    .timeline-row:last-child {
+      border-bottom: none;
+    }
+
+    .phase-label {
+      width: 130px;
+      padding: 0 1rem;
+      font-weight: 600;
+      font-size: 0.9rem;
+      flex-shrink: 0;
+    }
+
+    .phase-label .weeks {
+      font-weight: 400;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-left: 0.25rem;
+    }
+
+    .phase-bar {
+      flex: 1;
+      display: flex;
+      height: 100%;
+      min-height: 44px;
+      align-items: center;
+      padding: 0 0.5rem;
+    }
+
+    .phase-block {
+      height: 32px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      padding: 0 0.75rem;
+      font-size: 0.75rem;
+      font-weight: 500;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+
+    .phase-block:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+
+    .phase-block .date-range {
+      font-weight: 400;
+      font-size: 0.85em;
+      opacity: 0.9;
+      margin-left: 0.2em;
+      white-space: nowrap;
+    }
+
+    .phase-0 .phase-block { background: linear-gradient(135deg, var(--accent-0), #818cf8); color: white; }
+    .phase-1 .phase-block { background: linear-gradient(135deg, var(--accent-1), #4ade80); color: #0a0a0a; }
+    .phase-2 .phase-block { background: linear-gradient(135deg, var(--accent-2), #fbbf24); color: #0a0a0a; }
+    .phase-3 .phase-block { background: linear-gradient(135deg, var(--accent-3), #f472b6); color: white; }
+    .phase-4 .phase-block { background: linear-gradient(135deg, var(--accent-4), #22d3ee); color: #0a0a0a; }
+
+    .phase-integration .phase-block {
+      background: repeating-linear-gradient(
+        -45deg,
+        transparent,
+        transparent 4px,
+        rgba(255,255,255,0.08) 4px,
+        rgba(255,255,255,0.08) 8px
+      );
+      background-color: var(--accent-1);
+      color: white;
+      opacity: 0.9;
+    }
+
+    /* Custom block positioning: --start (week 1-22), --weeks (duration) */
+    .phase-block[style*="--start"] {
+      margin-left: calc((var(--start) - 1) * 100% / 22);
+      width: calc(var(--weeks) * 100% / 22);
+    }
+
+    /* Legend */
+    .legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.85rem;
+    }
+
+    .legend-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 4px;
+    }
+
+    .legend-dot.phase-0 { background: var(--accent-0); }
+    .legend-dot.phase-1 { background: var(--accent-1); }
+    .legend-dot.phase-2 { background: var(--accent-2); }
+    .legend-dot.phase-3 { background: var(--accent-3); }
+    .legend-dot.phase-4 { background: var(--accent-4); }
+    .legend-dot.integration { background: var(--accent-1); opacity: 0.8; }
+
+    @media (max-width: 768px) {
+      body { padding: 1.5rem 1rem; }
+      .phase-label { width: 100px; font-size: 0.8rem; }
+      .week-scale { padding-left: 100px; }
+      .phase-block { font-size: 0.7rem; padding: 0 0.4rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <a href="index.html" style="display:inline-block;color:var(--text-muted);font-size:0.85rem;text-decoration:none;margin-bottom:0.5rem;">← Dokumentasjon</a>
+      <h1>Orbyt — My Social Life</h1>
+      <p class="subtitle">Prosjekttidslinje · 22 uker · Oppstart midt desember 2025 · Amity Net / Linda Simonsen · <a href="onboarding-flow.html" style="color:var(--accent-0);">Onboarding-flyt</a></p>
+    </header>
+
+    <div class="legend">
+      <div class="legend-item"><span class="legend-dot phase-0"></span> Oppstart</div>
+      <div class="legend-item"><span class="legend-dot phase-1"></span> Design & arkitektur</div>
+      <div class="legend-item"><span class="legend-dot phase-2"></span> Kjerneprodukt</div>
+      <div class="legend-item"><span class="legend-dot phase-3"></span> Link-in-Bio, PWA</div>
+      <div class="legend-item"><span class="legend-dot phase-4"></span> Lansering</div>
+      <div class="legend-item"><span class="legend-dot integration"></span> Integrasjonsteam</div>
+    </div>
+
+    <div class="month-scale">
+      <span class="m-des">Des ʼ25</span>
+      <span class="m-jan">Jan ʼ26</span>
+      <span class="m-feb">Feb ʼ26</span>
+      <span class="m-mar">Mar ʼ26</span>
+      <span class="m-apr">Apr ʼ26</span>
+      <span class="m-mai">Mai ʼ26</span>
+    </div>
+    <div class="week-scale">
+      <span title="16. des">51</span><span title="23. des">52</span><span title="30. des">1</span><span title="6. jan">2</span><span title="13. jan">3</span><span title="20. jan">4</span>
+      <span title="27. jan">5</span><span title="3. feb">6</span><span title="10. feb">7</span><span title="17. feb">8</span><span title="24. feb">9</span><span title="3. mar">10</span>
+      <span title="10. mar">11</span><span title="17. mar">12</span><span title="24. mar">13</span><span title="31. mar">14</span><span title="7. apr">15</span><span title="14. apr">16</span>
+      <span title="21. apr">17</span><span title="28. apr">18</span><span title="5. mai">19</span><span title="12. mai">20</span>
+    </div>
+
+    <div class="timeline">
+      <div class="timeline-row phase-0">
+        <div class="phase-label">Oppstart <span class="weeks">(51–52)</span></div>
+        <div class="phase-bar">
+          <div class="phase-block" style="--start: 1; --weeks: 2" title="Klikkbar prototype, prosjektoppstart">Oppstart <span class="date-range">(frem til uke 2)</span></div>
+        </div>
+      </div>
+      <div class="timeline-row phase-1">
+        <div class="phase-label">Fase 1 <span class="weeks">(1–8)</span></div>
+        <div class="phase-bar">
+          <div class="phase-block" style="--start: 3; --weeks: 8" title="Design, arkitektur, teknologivalg">Design, arkitektur, teknologivalg m.m. <span class="date-range">(uke 1–8)</span></div>
+        </div>
+      </div>
+      <div class="timeline-row phase-2">
+        <div class="phase-label">Kjerneprod. <span class="weeks">(5–12)</span></div>
+        <div class="phase-bar">
+          <div class="phase-block" style="--start: 7; --weeks: 8" title="Auth, Mux, OAuth, kalender">Kjerneprodukt + OAuth <span class="date-range">(uke 5–12)</span></div>
+        </div>
+      </div>
+      <div class="timeline-row phase-integration">
+        <div class="phase-label">Integr. <span class="weeks">(8–17)</span></div>
+        <div class="phase-bar">
+          <div class="phase-block" style="--start: 10; --weeks: 10" title="OAuth, API, publisering">Integrasjonsteam <span class="date-range">(uke 8–17)</span></div>
+        </div>
+      </div>
+      <div class="timeline-row phase-1">
+        <div class="phase-label">OAuth/API <span class="weeks">(8–12)</span></div>
+        <div class="phase-bar">
+          <div class="phase-block" style="--start: 10; --weeks: 5" title="Meta og Google OAuth, API-oppsett">OAuth, API-oppsett <span class="date-range">(uke 8–12)</span></div>
+        </div>
+      </div>
+      <div class="timeline-row phase-2">
+        <div class="phase-label">Publisering <span class="weeks">(13–16)</span></div>
+        <div class="phase-bar">
+          <div class="phase-block" style="--start: 15; --weeks: 4" title="Meta, YouTube publisering">Publisering Meta/YouTube <span class="date-range">(uke 13–16)</span></div>
+        </div>
+      </div>
+      <div class="timeline-row phase-3">
+        <div class="phase-label">Link-in-Bio <span class="weeks">(12–18)</span></div>
+        <div class="phase-bar">
+          <div class="phase-block" style="--start: 14; --weeks: 7" title="Link-in-Bio, Orbit, PWA">Link-in-Bio · PWA <span class="date-range">(uke 12–18)</span></div>
+        </div>
+      </div>
+      <div class="timeline-row phase-2">
+        <div class="phase-label">Scheduler <span class="weeks">(10–14)</span></div>
+        <div class="phase-bar">
+          <div class="phase-block" style="--start: 12; --weeks: 5" title="Kalender, planlegging, kø">Scheduler, kalender <span class="date-range">(uke 10–14)</span></div>
+        </div>
+      </div>
+      <div class="timeline-row phase-4">
+        <div class="phase-label">Testing <span class="weeks">(17–19)</span></div>
+        <div class="phase-bar">
+          <div class="phase-block" style="--start: 19; --weeks: 3" title="Testing, beta, forberedelser">Testing, beta <span class="date-range">(uke 17–19)</span></div>
+        </div>
+      </div>
+      <div class="timeline-row phase-4">
+        <div class="phase-label">Lansering <span class="weeks">(19)</span></div>
+        <div class="phase-bar">
+          <div class="phase-block" style="--start: 21; --weeks: 2" title="Go-live, overvåking">Lansering <span class="date-range">(uke 19)</span></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>

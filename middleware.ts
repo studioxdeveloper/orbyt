@@ -2,6 +2,7 @@ import { rewrite } from '@vercel/functions';
 
 /** Host-basert routing: riktig prototype til riktig domene */
 const HOST_MAP: Record<string, string> = {
+  'orbyttimeline.studiox.tech': '/index.html',
   'orbytapp.studiox.tech': '/prototype/app.html',
   'orbytdashboard.studiox.tech': '/prototype/dashboard.html',
   'orbytlink.studiox.tech': '/prototype/linkinbio.html',
