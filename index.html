@@ -441,11 +441,17 @@
   }
 
   .product-card {
+    display: block;
     background: rgba(255,255,255,0.03);
     border: 1px solid rgba(255,255,255,0.06);
     border-radius: 16px;
     padding: 24px;
     transition: all 0.3s;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
   }
 
   .product-card:hover {
@@ -467,6 +473,7 @@
     font-weight: 500;
     margin-bottom: 12px;
     opacity: 0.8;
+    pointer-events: none;
   }
 
   .product-card p {
@@ -579,24 +586,24 @@
 
   <!-- Products -->
   <div class="products-grid">
-    <div class="product-card">
+    <a class="product-card" href="https://orbytlink.studiox.tech" target="_blank" rel="noopener noreferrer">
       <div class="product-icon" style="background: linear-gradient(135deg, #E040FB, #b830d0);"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></div>
       <h3>Orbyt Link</h3>
       <div class="url">orbytlink.studiox.tech</div>
       <p>PWA – Link in Bio-løsning. En kompakt, rask og installerbar webapplikasjon for å samle og dele lenker.</p>
-    </div>
-    <div class="product-card">
+    </a>
+    <a class="product-card" href="https://orbytapp.studiox.tech" target="_blank" rel="noopener noreferrer">
       <div class="product-icon" style="background: linear-gradient(135deg, #FF6E3C, #e0552a);"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></div>
       <h3>Orbyt App</h3>
       <div class="url">orbytapp.studiox.tech</div>
       <p>React Native mobilapp. Hovedapplikasjonen for innholdsskapere med full funksjonalitet og native opplevelse.</p>
-    </div>
-    <div class="product-card">
+    </a>
+    <a class="product-card" href="https://orbytdashboard.studiox.tech" target="_blank" rel="noopener noreferrer">
       <div class="product-icon" style="background: linear-gradient(135deg, #00C8B4, #00a896);"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="9"/><rect x="14" y="3" width="7" height="5"/><rect x="14" y="12" width="7" height="9"/><rect x="3" y="16" width="7" height="5"/></svg></div>
       <h3>Orbyt Dashboard</h3>
       <div class="url">orbytdashboard.studiox.tech</div>
       <p>Webplattform og dashboard. Administrasjon, analyse og innsikt for brukere og innholdsskapere.</p>
-    </div>
+    </a>
   </div>
 
   <!-- Legend -->
