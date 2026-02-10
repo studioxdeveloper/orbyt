@@ -132,6 +132,11 @@
             transform: translateX(0);
         }
 
+        /* Create post screen: extra bottom padding so content can scroll above tab bar */
+        #screen-create {
+            padding-bottom: calc(16px + 56px + var(--safe-bottom));
+        }
+
         /* Status bar */
         .status-bar {
             height: var(--safe-top);
