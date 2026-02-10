@@ -47,27 +47,6 @@
     margin-bottom: 50px;
   }
 
-  .header .logo {
-    display: inline-flex;
-    align-items: center;
-    gap: 14px;
-    margin-bottom: 16px;
-  }
-
-  .header .logo-icon {
-    width: 48px;
-    height: 48px;
-    background: linear-gradient(135deg, #633CFF 0%, #00C8B4 100%);
-    border-radius: 14px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 22px;
-    font-weight: 800;
-    color: white;
-    box-shadow: 0 4px 20px rgba(99, 60, 255, 0.4);
-  }
-
   .header h1 {
     font-size: 36px;
     font-weight: 800;
@@ -468,11 +447,11 @@
   }
 
   .product-card .url {
-    font-size: 11px;
-    color: #633CFF;
-    font-weight: 500;
+    font-size: 12px;
+    color: #A78BFA;
+    font-weight: 600;
     margin-bottom: 12px;
-    opacity: 0.8;
+    opacity: 1;
     pointer-events: none;
   }
 
@@ -557,9 +536,6 @@
 
   <!-- Header -->
   <div class="header">
-    <div class="logo">
-      <div class="logo-icon">O</div>
-    </div>
     <h1>Orbyt – Prosjekttidslinje</h1>
     <div class="subtitle">Studio X AS &middot; Uke 50/2025 – Uke 18/2026 &middot; Oppdatert 9. februar 2026</div>
   </div>
@@ -647,7 +623,7 @@
           <div class="week-col">U4</div>
           <div class="week-col">U5</div>
           <div class="week-col">U6</div>
-          <div class="week-col" class="current">U7</div>
+          <div class="week-col">U7</div>
           <div class="week-col">U8</div>
           <div class="week-col">U9</div>
           <div class="week-col">U10</div>
@@ -861,18 +837,28 @@
     </div>
   </div>
 
-  <div class="footer">
-    <strong>Orbyt</strong> &middot; Studio X AS &middot; Prosjekttidslinje generert 9. februar 2026
-  </div>
-
 </div>
 
 <script>
-  document.querySelectorAll('.week-col').forEach(col => {
-    if (col.textContent.trim() === 'U7') {
-      col.classList.add('current');
-    }
-  });
+  // ISO week number (uke 1 = uken med årets første torsdag)
+  function getISOWeek(date) {
+    const d = new Date(date);
+    d.setHours(0, 0, 0, 0);
+    d.setDate(d.getDate() + 3 - (d.getDay() + 6) % 7);
+    const jan1 = new Date(d.getFullYear(), 0, 1);
+    return 1 + Math.round(((d - jan1) / 86400000 - 3 + (jan1.getDay() + 6) % 7) / 7);
+  }
+  // Highlight current week dynamically
+  (function () {
+    const weekNum = getISOWeek(new Date());
+    const currentLabel = 'U' + weekNum;
+    document.querySelectorAll('.week-col').forEach(function (col) {
+      col.classList.remove('current');
+      if (col.textContent.trim() === currentLabel) {
+        col.classList.add('current');
+      }
+    });
+  })();
 
   const bars = document.querySelectorAll('.task-bar');
   const tooltipData = {
