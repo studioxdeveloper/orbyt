@@ -19,7 +19,6 @@
             --neon-red: #EF4444;
             --instagram: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
             --facebook: #1877F2;
-            --linkedin: #0A66C2;
             --tiktok: #000000;
             --youtube: #FF0000;
             --twitter: #000000;
@@ -421,7 +420,6 @@
         .calendar-event.instagram { background: linear-gradient(45deg, rgba(240, 148, 51, 0.3), rgba(188, 24, 136, 0.3)); }
         .calendar-event.facebook { background: rgba(24, 119, 242, 0.3); }
         .calendar-event.youtube { background: rgba(255, 0, 0, 0.3); }
-        .calendar-event.linkedin { background: rgba(10, 102, 194, 0.3); }
         .calendar-event.tiktok { background: rgba(255, 255, 255, 0.1); }
         /* Analytics Page */
         .analytics-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 32px; }
@@ -665,7 +663,7 @@
                 <div class="nav-section-title" data-i18n-section="settingsSection">Innstillinger</div>
                 <div class="nav-item" onclick="showPage('settings')">
                     <i data-lucide="settings"></i>
-                    <span class="nav-item-label">Innstillinger</span>
+                    <span class="nav-item-label" data-i18n="settings">Innstillinger</span>
                 </div>
             </div>
         </nav>
@@ -786,7 +784,7 @@
                                     <div class="post-time-hour">12:00</div>
                                 </div>
                                 <div class="post-platforms">
-                                    <div class="platform-badge" style="background: var(--linkedin);"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></div>
+                                    <div class="platform-badge" style="background: var(--youtube);"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></div>
                                 </div>
                                 <img class="post-preview" src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=120&h=120&fit=crop" alt="">
                                 <div class="post-content">Jeg er stolt av å dele at vi har nådd 100K følgere! 🎉</div>
@@ -820,33 +818,33 @@
                                         <div class="platform-row-icon" style="background: var(--instagram);"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></div>
                                         <div class="platform-row-info">
                                             <div class="platform-row-name">Instagram</div>
-                                            <div class="platform-row-followers">124,532 følgere</div>
+                                            <div class="platform-row-followers">124,532 <span data-i18n="followers">følgere</span></div>
                                         </div>
                                         <div class="platform-row-stats">
                                             <div class="platform-row-change"><i data-lucide="trending-up"></i>+12%</div>
-                                            <div class="platform-row-engagement">5.2% eng.</div>
+                                            <div class="platform-row-engagement">5.2% <span data-i18n="eng">eng.</span></div>
                                         </div>
                                     </div>
                                     <div class="platform-row" onclick="showPage('connections')">
                                         <div class="platform-row-icon" style="background: var(--youtube);"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></div>
                                         <div class="platform-row-info">
                                             <div class="platform-row-name">YouTube</div>
-                                            <div class="platform-row-followers">56,200 subs</div>
+                                            <div class="platform-row-followers">56,200 <span data-i18n="subs">subs</span></div>
                                         </div>
                                         <div class="platform-row-stats">
                                             <div class="platform-row-change"><i data-lucide="trending-up"></i>+23%</div>
-                                            <div class="platform-row-engagement">8.1% eng.</div>
+                                            <div class="platform-row-engagement">8.1% <span data-i18n="eng">eng.</span></div>
                                         </div>
                                     </div>
                                     <div class="platform-row" onclick="showPage('connections')">
                                         <div class="platform-row-icon" style="background: #000;"><svg viewBox="0 0 24 24" fill="#fff"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></div>
                                         <div class="platform-row-info">
                                             <div class="platform-row-name">TikTok</div>
-                                            <div class="platform-row-followers">89,300 følgere</div>
+                                            <div class="platform-row-followers">89,300 <span data-i18n="followers">følgere</span></div>
                                         </div>
                                         <div class="platform-row-stats">
                                             <div class="platform-row-change"><i data-lucide="trending-up"></i>+45%</div>
-                                            <div class="platform-row-engagement">12.3% eng.</div>
+                                            <div class="platform-row-engagement">12.3% <span data-i18n="eng">eng.</span></div>
                                         </div>
                                     </div>
                                 </div>
@@ -860,14 +858,14 @@
                             <div class="card-body">
                                 <div class="calendar-mini">
                                     <div class="calendar-mini-header">
-                                        <span class="calendar-mini-title">Februar 2026</span>
+                                        <span class="calendar-mini-title" data-i18n="february2026">Februar 2026</span>
                                         <div class="calendar-mini-nav">
                                             <div class="calendar-mini-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg></div>
                                             <div class="calendar-mini-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg></div>
                                         </div>
                                     </div>
                                     <div class="calendar-mini-weekdays">
-                                        <span class="calendar-mini-weekday">Ma</span><span class="calendar-mini-weekday">Ti</span><span class="calendar-mini-weekday">On</span><span class="calendar-mini-weekday">To</span><span class="calendar-mini-weekday">Fr</span><span class="calendar-mini-weekday">Lø</span><span class="calendar-mini-weekday">Sø</span>
+                                        <span class="calendar-mini-weekday" data-i18n="mon">Man</span><span class="calendar-mini-weekday" data-i18n="tue">Tir</span><span class="calendar-mini-weekday" data-i18n="wed">Ons</span><span class="calendar-mini-weekday" data-i18n="thu">Tor</span><span class="calendar-mini-weekday" data-i18n="fri">Fre</span><span class="calendar-mini-weekday" data-i18n="sat">Lør</span><span class="calendar-mini-weekday" data-i18n="sun">Søn</span>
                                     </div>
                                     <div class="calendar-mini-grid">
                                         <span class="calendar-mini-day other">26</span><span class="calendar-mini-day other">27</span><span class="calendar-mini-day other">28</span><span class="calendar-mini-day other">29</span><span class="calendar-mini-day other">30</span><span class="calendar-mini-day other">31</span><span class="calendar-mini-day">1</span>
@@ -923,7 +921,7 @@
                             <div class="calendar-day" onclick="openPostDetail(1)"><div class="calendar-day-number">2</div><div class="calendar-event instagram">09:00 Instagram Reel</div></div>
                             <div class="calendar-day"><div class="calendar-day-number">3</div></div>
                             <div class="calendar-day today" onclick="setCalendarView('day')"><div class="calendar-day-number">4</div><div class="calendar-event instagram">18:00 Nyhet-lansering</div><div class="calendar-event facebook">18:00 Facebook</div></div>
-                            <div class="calendar-day" onclick="openPostDetail(2)"><div class="calendar-day-number">5</div><div class="calendar-event linkedin">12:00 100K milestone</div></div>
+                            <div class="calendar-day" onclick="openPostDetail(2)"><div class="calendar-day-number">5</div><div class="calendar-event youtube">12:00 100K milestone</div></div>
                             <div class="calendar-day"><div class="calendar-day-number">6</div></div>
                             <div class="calendar-day"><div class="calendar-day-number">7</div></div>
                             <div class="calendar-day"><div class="calendar-day-number">8</div></div>
@@ -938,7 +936,7 @@
                             <div class="calendar-day"><div class="calendar-day-number">17</div><div class="calendar-event instagram">14:00 Motivasjon</div></div>
                             <div class="calendar-day"><div class="calendar-day-number">18</div></div>
                             <div class="calendar-day"><div class="calendar-day-number">19</div></div>
-                            <div class="calendar-day"><div class="calendar-day-number">20</div><div class="calendar-event linkedin">Karriere tips</div></div>
+                            <div class="calendar-day"><div class="calendar-day-number">20</div><div class="calendar-event tiktok">Karriere tips</div></div>
                             <div class="calendar-day"><div class="calendar-day-number">21</div></div>
                             <div class="calendar-day"><div class="calendar-day-number">22</div></div>
                             <div class="calendar-day"><div class="calendar-day-number">23</div></div>
@@ -984,7 +982,7 @@
                                     <div style="position:absolute;top:600px;left:4px;right:4px;margin-top:50px;background:var(--facebook);padding:8px;border-radius:6px;font-size:11px;color:#fff;cursor:pointer;">18:00 Facebook Post</div>
                                 </div>
                                 <div style="border-left:1px solid var(--glass-border);position:relative;">
-                                    <div style="position:absolute;top:240px;left:4px;right:4px;background:var(--linkedin);padding:8px;border-radius:6px;font-size:11px;color:#fff;cursor:pointer;" onclick="openPostDetail(2)">12:00 100K milestone<br><span style="opacity:0.8;">LinkedIn</span></div>
+                                    <div style="position:absolute;top:240px;left:4px;right:4px;background:var(--youtube);padding:8px;border-radius:6px;font-size:11px;color:#fff;cursor:pointer;" onclick="openPostDetail(2)">12:00 100K milestone<br><span style="opacity:0.8;">YouTube</span></div>
                                 </div>
                                 <div style="border-left:1px solid var(--glass-border);position:relative;"></div>
                                 <div style="border-left:1px solid var(--glass-border);position:relative;"></div>
@@ -1074,7 +1072,7 @@
                     <div class="chart-header">
                         <h3 class="chart-title">Følgervekst</h3>
                         <div class="analytics-filters">
-                            <button class="filter-btn active" style="padding:6px 12px;font-size:12px">Alle</button>
+                            <button class="filter-btn active" style="padding:6px 12px;font-size:12px" data-i18n="all">Alle</button>
                             <button class="filter-btn" style="padding:6px 12px;font-size:12px">Instagram</button>
                             <button class="filter-btn" style="padding:6px 12px;font-size:12px">YouTube</button>
                             <button class="filter-btn" style="padding:6px 12px;font-size:12px">TikTok</button>
@@ -1174,18 +1172,18 @@
                             <div class="connection-icon" style="background: var(--instagram);"><svg viewBox="0 0 24 24" fill="currentColor" style="width:28px;height:28px"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></div>
                             <div class="connection-info">
                                 <div class="connection-name">Instagram</div>
-                                <div class="connection-status connected"><span class="connection-status-dot"></span>Tilkoblet</div>
+                                <div class="connection-status connected"><span class="connection-status-dot"></span><span data-i18n="connected">Tilkoblet</span></div>
                             </div>
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:20px;height:20px;color:var(--text-muted)"><path d="M9 18l6-6-6-6"/></svg>
                         </div>
                         <div class="connection-details">
-                            <div class="connection-detail"><span class="connection-detail-label">Konto</span><span class="connection-detail-value">@lindasimonsen</span></div>
-                            <div class="connection-detail"><span class="connection-detail-label">Følgere</span><span class="connection-detail-value">124,532</span></div>
-                            <div class="connection-detail"><span class="connection-detail-label">Tilkoblet</span><span class="connection-detail-value">15. jan 2026</span></div>
+                            <div class="connection-detail"><span class="connection-detail-label" data-i18n="account">Konto</span><span class="connection-detail-value">@lindasimonsen</span></div>
+                            <div class="connection-detail"><span class="connection-detail-label" data-i18n="followers">Følgere</span><span class="connection-detail-value">124,532</span></div>
+                            <div class="connection-detail"><span class="connection-detail-label" data-i18n="connectedDate">Tilkoblet</span><span class="connection-detail-value">15. jan 2026</span></div>
                         </div>
                         <div class="connection-actions" onclick="event.stopPropagation()">
-                            <button class="connection-btn secondary">Innstillinger</button>
-                            <button class="connection-btn danger">Koble fra</button>
+                            <button class="connection-btn secondary" data-i18n="settings">Innstillinger</button>
+                            <button class="connection-btn danger" data-i18n="disconnect">Koble fra</button>
                         </div>
                     </div>
                     <div class="connection-card" style="cursor:pointer;" onclick="showPage('youtube')">
@@ -1193,18 +1191,18 @@
                             <div class="connection-icon" style="background: var(--youtube);"><svg viewBox="0 0 24 24" fill="currentColor" style="width:28px;height:28px"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></div>
                             <div class="connection-info">
                                 <div class="connection-name">YouTube</div>
-                                <div class="connection-status connected"><span class="connection-status-dot"></span>Tilkoblet</div>
+                                <div class="connection-status connected"><span class="connection-status-dot"></span><span data-i18n="connected">Tilkoblet</span></div>
                             </div>
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:20px;height:20px;color:var(--text-muted)"><path d="M9 18l6-6-6-6"/></svg>
                         </div>
                         <div class="connection-details">
-                            <div class="connection-detail"><span class="connection-detail-label">Kanal</span><span class="connection-detail-value">Linda Simonsen</span></div>
-                            <div class="connection-detail"><span class="connection-detail-label">Subscribers</span><span class="connection-detail-value">56,200</span></div>
-                            <div class="connection-detail"><span class="connection-detail-label">Tilkoblet</span><span class="connection-detail-value">15. jan 2026</span></div>
+                            <div class="connection-detail"><span class="connection-detail-label" data-i18n="channel">Kanal</span><span class="connection-detail-value">Linda Simonsen</span></div>
+                            <div class="connection-detail"><span class="connection-detail-label" data-i18n="subscribers">Subscribers</span><span class="connection-detail-value">56,200</span></div>
+                            <div class="connection-detail"><span class="connection-detail-label" data-i18n="connectedDate">Tilkoblet</span><span class="connection-detail-value">15. jan 2026</span></div>
                         </div>
                         <div class="connection-actions" onclick="event.stopPropagation()">
-                            <button class="connection-btn secondary">Innstillinger</button>
-                            <button class="connection-btn danger">Koble fra</button>
+                            <button class="connection-btn secondary" data-i18n="settings">Innstillinger</button>
+                            <button class="connection-btn danger" data-i18n="disconnect">Koble fra</button>
                         </div>
                     </div>
                     <div class="connection-card">
@@ -1212,32 +1210,17 @@
                             <div class="connection-icon" style="background: #000;"><svg viewBox="0 0 24 24" fill="#fff" style="width:28px;height:28px"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></div>
                             <div class="connection-info">
                                 <div class="connection-name">TikTok</div>
-                                <div class="connection-status connected"><span class="connection-status-dot"></span>Tilkoblet</div>
+                                <div class="connection-status connected"><span class="connection-status-dot"></span><span data-i18n="connected">Tilkoblet</span></div>
                             </div>
                         </div>
                         <div class="connection-details">
-                            <div class="connection-detail"><span class="connection-detail-label">Konto</span><span class="connection-detail-value">@lindasimonsen</span></div>
-                            <div class="connection-detail"><span class="connection-detail-label">Følgere</span><span class="connection-detail-value">89,300</span></div>
-                            <div class="connection-detail"><span class="connection-detail-label">Tilkoblet</span><span class="connection-detail-value">20. jan 2026</span></div>
+                            <div class="connection-detail"><span class="connection-detail-label" data-i18n="account">Konto</span><span class="connection-detail-value">@lindasimonsen</span></div>
+                            <div class="connection-detail"><span class="connection-detail-label" data-i18n="followers">Følgere</span><span class="connection-detail-value">89,300</span></div>
+                            <div class="connection-detail"><span class="connection-detail-label" data-i18n="connectedDate">Tilkoblet</span><span class="connection-detail-value">20. jan 2026</span></div>
                         </div>
                         <div class="connection-actions">
-                            <button class="connection-btn secondary">Innstillinger</button>
-                            <button class="connection-btn danger">Koble fra</button>
-                        </div>
-                    </div>
-                    <div class="connection-card">
-                        <div class="connection-header">
-                            <div class="connection-icon" style="background: var(--linkedin);"><svg viewBox="0 0 24 24" fill="currentColor" style="width:28px;height:28px"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></div>
-                            <div class="connection-info">
-                                <div class="connection-name">LinkedIn</div>
-                                <div class="connection-status disconnected"><span class="connection-status-dot"></span>Ikke tilkoblet</div>
-                            </div>
-                        </div>
-                        <div class="connection-details">
-                            <div class="connection-detail"><span class="connection-detail-label">Status</span><span class="connection-detail-value">Ikke konfigurert</span></div>
-                        </div>
-                        <div class="connection-actions">
-                            <button class="connection-btn primary">Koble til</button>
+                            <button class="connection-btn secondary" data-i18n="settings">Innstillinger</button>
+                            <button class="connection-btn danger" data-i18n="disconnect">Koble fra</button>
                         </div>
                     </div>
                     <div class="connection-card" style="cursor:pointer;" onclick="showPage('facebook')">
@@ -1245,18 +1228,18 @@
                             <div class="connection-icon" style="background: var(--facebook);"><svg viewBox="0 0 24 24" fill="currentColor" style="width:28px;height:28px"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></div>
                             <div class="connection-info">
                                 <div class="connection-name">Facebook</div>
-                                <div class="connection-status connected"><span class="connection-status-dot"></span>Tilkoblet</div>
+                                <div class="connection-status connected"><span class="connection-status-dot"></span><span data-i18n="connected">Tilkoblet</span></div>
                             </div>
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:20px;height:20px;color:var(--text-muted)"><path d="M9 18l6-6-6-6"/></svg>
                         </div>
                         <div class="connection-details">
-                            <div class="connection-detail"><span class="connection-detail-label">Side</span><span class="connection-detail-value">Linda Simonsen</span></div>
-                            <div class="connection-detail"><span class="connection-detail-label">Følgere</span><span class="connection-detail-value">8,400</span></div>
-                            <div class="connection-detail"><span class="connection-detail-label">Tilkoblet</span><span class="connection-detail-value">15. jan 2026</span></div>
+                            <div class="connection-detail"><span class="connection-detail-label" data-i18n="pageLabel">Side</span><span class="connection-detail-value">Linda Simonsen</span></div>
+                            <div class="connection-detail"><span class="connection-detail-label" data-i18n="followers">Følgere</span><span class="connection-detail-value">8,400</span></div>
+                            <div class="connection-detail"><span class="connection-detail-label" data-i18n="connectedDate">Tilkoblet</span><span class="connection-detail-value">15. jan 2026</span></div>
                         </div>
                         <div class="connection-actions" onclick="event.stopPropagation()">
-                            <button class="connection-btn secondary">Innstillinger</button>
-                            <button class="connection-btn danger">Koble fra</button>
+                            <button class="connection-btn secondary" data-i18n="settings">Innstillinger</button>
+                            <button class="connection-btn danger" data-i18n="disconnect">Koble fra</button>
                         </div>
                     </div>
                     <div class="connection-card" style="border: 2px dashed var(--glass-border); background: transparent;">
@@ -1264,8 +1247,8 @@
                             <div style="width: 64px; height: 64px; background: var(--bg-tertiary); border-radius: 16px; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px;">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 32px; height: 32px; color: var(--text-muted);"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
                             </div>
-                            <div style="font-size: 16px; font-weight: 600; margin-bottom: 8px;">Legg til plattform</div>
-                            <div style="font-size: 13px; color: var(--text-secondary);">Koble til flere sosiale medier</div>
+                            <div style="font-size: 16px; font-weight: 600; margin-bottom: 8px;" data-i18n="addPlatform">Legg til plattform</div>
+                            <div style="font-size: 13px; color: var(--text-secondary);" data-i18n="connectMoreSocial">Koble til flere sosiale medier</div>
                         </div>
                     </div>
                 </div>
@@ -1276,22 +1259,22 @@
                 <div class="linkinbio-editor">
                     <div class="linkinbio-form">
                         <div class="form-group">
-                            <label class="form-label">Din URL</label>
+                            <label class="form-label" data-i18n="yourUrl">Din URL</label>
                             <div style="display:flex;gap:8px;align-items:center;">
                                 <span style="color:var(--text-muted)">orbyt.link/</span>
                                 <input type="text" class="form-input" value="lindasimonsen" style="flex:1">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="form-label">Visningsnavn</label>
+                            <label class="form-label" data-i18n="displayName">Visningsnavn</label>
                             <input type="text" class="form-input" value="Linda Simonsen">
                         </div>
                         <div class="form-group">
-                            <label class="form-label">Bio</label>
+                            <label class="form-label" data-i18n="bio">Bio</label>
                             <textarea class="form-textarea">CEO @AmityNet 🚀 | Bygger fremtidens sosiale HUB | Influencer & Content Creator | Oslo 🇳🇴</textarea>
                         </div>
                         <div class="form-group">
-                            <label class="form-label">Lenker</label>
+                            <label class="form-label" data-i18n="links">Lenker</label>
                             <div class="link-items">
                                 <div class="link-item-edit">
                                     <div class="link-item-drag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="5" r="1"/><circle cx="9" cy="12" r="1"/><circle cx="9" cy="19" r="1"/><circle cx="15" cy="5" r="1"/><circle cx="15" cy="12" r="1"/><circle cx="15" cy="19" r="1"/></svg></div>
@@ -1329,10 +1312,10 @@
                             </div>
                             <button class="btn-secondary" style="width:100%;justify-content:center;margin-top:12px;">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:18px;height:18px"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-                                Legg til lenke
+                                <span data-i18n="addLink">Legg til lenke</span>
                             </button>
                         </div>
-                        <button class="btn-primary" style="width:100%;justify-content:center;margin-top:24px;">Lagre endringer</button>
+                        <button class="btn-primary" style="width:100%;justify-content:center;margin-top:24px;" data-i18n="saveChanges">Lagre endringer</button>
                     </div>
                     <div class="linkinbio-preview">
                         <div class="phone-frame">
@@ -1363,11 +1346,11 @@
             <div class="page-view" id="page-settings">
                 <div class="settings-grid">
                     <div class="settings-nav">
-                        <div class="settings-nav-item active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg><span class="settings-nav-label">Profil</span></div>
-                        <div class="settings-nav-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg><span class="settings-nav-label">Sikkerhet</span></div>
-                        <div class="settings-nav-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg><span class="settings-nav-label">Varsler</span></div>
-                        <div class="settings-nav-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg><span class="settings-nav-label">Fakturering</span></div>
-                        <div class="settings-nav-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg><span class="settings-nav-label">Team</span></div>
+                        <div class="settings-nav-item active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg><span class="settings-nav-label" data-i18n="profile">Profil</span></div>
+                        <div class="settings-nav-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg><span class="settings-nav-label" data-i18n="security">Sikkerhet</span></div>
+                        <div class="settings-nav-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg><span class="settings-nav-label" data-i18n="notifications">Varsler</span></div>
+                        <div class="settings-nav-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg><span class="settings-nav-label" data-i18n="billing">Fakturering</span></div>
+                        <div class="settings-nav-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg><span class="settings-nav-label" data-i18n="team">Team</span></div>
                     </div>
                     <div class="settings-content">
                         <div class="settings-section">
@@ -1480,7 +1463,7 @@
             <!-- Instagram Detail Page -->
             <div class="page-view" id="page-instagram">
                 <div class="breadcrumb" style="margin-bottom:24px;">
-                    <span class="breadcrumb-item" onclick="showPage('connections')">Tilkoblinger</span>
+                    <span class="breadcrumb-item" onclick="showPage('connections')" data-i18n="connections">Tilkoblinger</span>
                     <span class="breadcrumb-sep">›</span>
                     <span class="breadcrumb-current">Instagram</span>
                 </div>
@@ -1491,7 +1474,7 @@
                             <div class="stat-change positive"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/></svg>+2,340</div>
                         </div>
                         <div class="stat-value">124,532</div>
-                        <div class="stat-label">Følgere</div>
+                        <div class="stat-label" data-i18n="followers">Følgere</div>
                     </div>
                     <div class="stat-card">
                         <div class="stat-header">
@@ -1499,7 +1482,7 @@
                             <div class="stat-change positive"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/></svg>+18%</div>
                         </div>
                         <div class="stat-value">456K</div>
-                        <div class="stat-label">Rekkevidde (30d)</div>
+                        <div class="stat-label" data-i18n="reach30d">Rekkevidde (30d)</div>
                     </div>
                     <div class="stat-card">
                         <div class="stat-header">
@@ -1507,22 +1490,22 @@
                             <div class="stat-change positive"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/></svg>+0.3%</div>
                         </div>
                         <div class="stat-value">5.2%</div>
-                        <div class="stat-label">Engasjement</div>
+                        <div class="stat-label" data-i18n="engagement">Engasjement</div>
                     </div>
                     <div class="stat-card">
                         <div class="stat-header">
                             <div class="stat-icon" style="background: linear-gradient(135deg, #F97316, #EF4444);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:24px;height:24px"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
                         </div>
                         <div class="stat-value">156</div>
-                        <div class="stat-label">Innlegg totalt</div>
+                        <div class="stat-label" data-i18n="postsTotal">Innlegg totalt</div>
                     </div>
                 </div>
                 <div class="main-grid">
                     <div class="card">
                         <div class="card-header">
-                            <h2 class="card-title">Siste innlegg</h2>
+                            <h2 class="card-title" data-i18n="latestPosts">Siste innlegg</h2>
                             <div style="display:flex;gap:8px;">
-                                <button class="filter-btn active" style="padding:6px 12px;font-size:12px">Alle</button>
+                                <button class="filter-btn active" style="padding:6px 12px;font-size:12px" data-i18n="all">Alle</button>
                                 <button class="filter-btn" style="padding:6px 12px;font-size:12px">Feed</button>
                                 <button class="filter-btn" style="padding:6px 12px;font-size:12px">Reels</button>
                                 <button class="filter-btn" style="padding:6px 12px;font-size:12px">Stories</button>
@@ -1559,31 +1542,31 @@
                     </div>
                     <div>
                         <div class="card">
-                            <div class="card-header"><h2 class="card-title">Kontodetaljer</h2></div>
+                            <div class="card-header"><h2 class="card-title" data-i18n="accountDetails">Kontodetaljer</h2></div>
                             <div class="card-body">
                                 <div style="text-align:center;margin-bottom:20px;">
                                     <div style="width:80px;height:80px;background:var(--instagram);border-radius:50%;margin:0 auto 12px;display:flex;align-items:center;justify-content:center;font-size:32px;font-weight:700;color:#fff;">L</div>
                                     <div style="font-size:16px;font-weight:600;">@lindasimonsen</div>
-                                    <div style="font-size:13px;color:var(--text-secondary);">Business-konto</div>
+                                    <div style="font-size:13px;color:var(--text-secondary);" data-i18n="businessAccount">Business-konto</div>
                                 </div>
                                 <div style="display:flex;flex-direction:column;gap:12px;">
-                                    <div style="display:flex;justify-content:space-between;padding:12px;background:var(--bg-tertiary);border-radius:8px;"><span style="color:var(--text-secondary)">Kontotype</span><span style="font-weight:500">Creator</span></div>
-                                    <div style="display:flex;justify-content:space-between;padding:12px;background:var(--bg-tertiary);border-radius:8px;"><span style="color:var(--text-secondary)">Tilkoblet</span><span style="font-weight:500">15. jan 2026</span></div>
-                                    <div style="display:flex;justify-content:space-between;padding:12px;background:var(--bg-tertiary);border-radius:8px;"><span style="color:var(--text-secondary)">Siste synk</span><span style="font-weight:500">For 5 min siden</span></div>
-                                    <div style="display:flex;justify-content:space-between;padding:12px;background:var(--bg-tertiary);border-radius:8px;"><span style="color:var(--text-secondary)">API-status</span><span style="color:var(--neon-green);font-weight:500">● Aktiv</span></div>
+                                    <div style="display:flex;justify-content:space-between;padding:12px;background:var(--bg-tertiary);border-radius:8px;"><span style="color:var(--text-secondary)" data-i18n="accountType">Kontotype</span><span style="font-weight:500">Creator</span></div>
+                                    <div style="display:flex;justify-content:space-between;padding:12px;background:var(--bg-tertiary);border-radius:8px;"><span style="color:var(--text-secondary)" data-i18n="connectedDate">Tilkoblet</span><span style="font-weight:500">15. jan 2026</span></div>
+                                    <div style="display:flex;justify-content:space-between;padding:12px;background:var(--bg-tertiary);border-radius:8px;"><span style="color:var(--text-secondary)" data-i18n="lastSync">Siste synk</span><span style="font-weight:500" data-i18n="lastSyncAgo">For 5 min siden</span></div>
+                                    <div style="display:flex;justify-content:space-between;padding:12px;background:var(--bg-tertiary);border-radius:8px;"><span style="color:var(--text-secondary)" data-i18n="apiStatus">API-status</span><span style="color:var(--neon-green);font-weight:500">● <span data-i18n="active">Aktiv</span></span></div>
                                 </div>
                             </div>
                         </div>
                         <div class="card" style="margin-top:20px;">
-                            <div class="card-header"><h2 class="card-title">Beste tidspunkter</h2></div>
+                            <div class="card-header"><h2 class="card-title" data-i18n="bestTimes">Beste tidspunkter</h2></div>
                             <div class="card-body">
-                                <div style="font-size:13px;color:var(--text-secondary);margin-bottom:16px;">Basert på når følgerne dine er aktive</div>
+                                <div style="font-size:13px;color:var(--text-secondary);margin-bottom:16px;" data-i18n="basedOnFollowers">Basert på når følgerne dine er aktive</div>
                                 <div style="display:flex;flex-direction:column;gap:8px;">
-                                    <div style="display:flex;align-items:center;gap:12px;"><span style="width:60px;font-size:13px;">Mandag</span><div style="flex:1;height:24px;background:var(--bg-tertiary);border-radius:4px;overflow:hidden;"><div style="width:85%;height:100%;background:var(--gradient-primary);display:flex;align-items:center;justify-content:flex-end;padding-right:8px;font-size:11px;">18:00</div></div></div>
-                                    <div style="display:flex;align-items:center;gap:12px;"><span style="width:60px;font-size:13px;">Tirsdag</span><div style="flex:1;height:24px;background:var(--bg-tertiary);border-radius:4px;overflow:hidden;"><div style="width:72%;height:100%;background:var(--gradient-primary);display:flex;align-items:center;justify-content:flex-end;padding-right:8px;font-size:11px;">19:00</div></div></div>
-                                    <div style="display:flex;align-items:center;gap:12px;"><span style="width:60px;font-size:13px;">Onsdag</span><div style="flex:1;height:24px;background:var(--bg-tertiary);border-radius:4px;overflow:hidden;"><div style="width:90%;height:100%;background:var(--gradient-primary);display:flex;align-items:center;justify-content:flex-end;padding-right:8px;font-size:11px;">12:00</div></div></div>
-                                    <div style="display:flex;align-items:center;gap:12px;"><span style="width:60px;font-size:13px;">Torsdag</span><div style="flex:1;height:24px;background:var(--bg-tertiary);border-radius:4px;overflow:hidden;"><div style="width:68%;height:100%;background:var(--gradient-primary);display:flex;align-items:center;justify-content:flex-end;padding-right:8px;font-size:11px;">20:00</div></div></div>
-                                    <div style="display:flex;align-items:center;gap:12px;"><span style="width:60px;font-size:13px;">Fredag</span><div style="flex:1;height:24px;background:var(--bg-tertiary);border-radius:4px;overflow:hidden;"><div style="width:78%;height:100%;background:var(--gradient-primary);display:flex;align-items:center;justify-content:flex-end;padding-right:8px;font-size:11px;">17:00</div></div></div>
+                                    <div style="display:flex;align-items:center;gap:12px;"><span style="width:44px;flex-shrink:0;font-size:13px;white-space:nowrap;" data-i18n="mon">Man</span><div style="flex:1;height:24px;background:var(--bg-tertiary);border-radius:4px;overflow:hidden;"><div style="width:85%;height:100%;background:var(--gradient-primary);display:flex;align-items:center;justify-content:flex-end;padding-right:8px;font-size:11px;">18:00</div></div></div>
+                                    <div style="display:flex;align-items:center;gap:12px;"><span style="width:44px;flex-shrink:0;font-size:13px;white-space:nowrap;" data-i18n="tue">Tir</span><div style="flex:1;height:24px;background:var(--bg-tertiary);border-radius:4px;overflow:hidden;"><div style="width:72%;height:100%;background:var(--gradient-primary);display:flex;align-items:center;justify-content:flex-end;padding-right:8px;font-size:11px;">19:00</div></div></div>
+                                    <div style="display:flex;align-items:center;gap:12px;"><span style="width:44px;flex-shrink:0;font-size:13px;white-space:nowrap;" data-i18n="wed">Ons</span><div style="flex:1;height:24px;background:var(--bg-tertiary);border-radius:4px;overflow:hidden;"><div style="width:90%;height:100%;background:var(--gradient-primary);display:flex;align-items:center;justify-content:flex-end;padding-right:8px;font-size:11px;">12:00</div></div></div>
+                                    <div style="display:flex;align-items:center;gap:12px;"><span style="width:44px;flex-shrink:0;font-size:13px;white-space:nowrap;" data-i18n="thu">Tor</span><div style="flex:1;height:24px;background:var(--bg-tertiary);border-radius:4px;overflow:hidden;"><div style="width:68%;height:100%;background:var(--gradient-primary);display:flex;align-items:center;justify-content:flex-end;padding-right:8px;font-size:11px;">20:00</div></div></div>
+                                    <div style="display:flex;align-items:center;gap:12px;"><span style="width:44px;flex-shrink:0;font-size:13px;white-space:nowrap;" data-i18n="fri">Fre</span><div style="flex:1;height:24px;background:var(--bg-tertiary);border-radius:4px;overflow:hidden;"><div style="width:78%;height:100%;background:var(--gradient-primary);display:flex;align-items:center;justify-content:flex-end;padding-right:8px;font-size:11px;">17:00</div></div></div>
                                 </div>
                             </div>
                         </div>
@@ -1594,7 +1577,7 @@
             <!-- Facebook Detail Page -->
             <div class="page-view" id="page-facebook">
                 <div class="breadcrumb" style="margin-bottom:24px;">
-                    <span class="breadcrumb-item" onclick="showPage('connections')">Tilkoblinger</span>
+                    <span class="breadcrumb-item" onclick="showPage('connections')" data-i18n="connections">Tilkoblinger</span>
                     <span class="breadcrumb-sep">›</span>
                     <span class="breadcrumb-current">Facebook</span>
                 </div>
@@ -1605,7 +1588,7 @@
                             <div class="stat-change positive"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/></svg>+156</div>
                         </div>
                         <div class="stat-value">8,400</div>
-                        <div class="stat-label">Sideliker</div>
+                        <div class="stat-label" data-i18n="sideLikes">Sideliker</div>
                     </div>
                     <div class="stat-card">
                         <div class="stat-header">
@@ -1613,71 +1596,71 @@
                             <div class="stat-change positive"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/></svg>+12%</div>
                         </div>
                         <div class="stat-value">52K</div>
-                        <div class="stat-label">Rekkevidde (30d)</div>
+                        <div class="stat-label" data-i18n="reach30d">Rekkevidde (30d)</div>
                     </div>
                     <div class="stat-card">
                         <div class="stat-header">
                             <div class="stat-icon" style="background: linear-gradient(135deg, #10B981, #06B6D4);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:24px;height:24px"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
                         </div>
                         <div class="stat-value">3.1%</div>
-                        <div class="stat-label">Engasjement</div>
+                        <div class="stat-label" data-i18n="engagement">Engasjement</div>
                     </div>
                     <div class="stat-card">
                         <div class="stat-header">
                             <div class="stat-icon" style="background: linear-gradient(135deg, #F97316, #EF4444);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:24px;height:24px"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
                         </div>
                         <div class="stat-value">89</div>
-                        <div class="stat-label">Innlegg totalt</div>
+                        <div class="stat-label" data-i18n="postsTotal">Innlegg totalt</div>
                     </div>
                 </div>
                 <div class="main-grid">
                     <div class="card">
                         <div class="card-header">
-                            <h2 class="card-title">Siste innlegg</h2>
-                            <span class="card-action">Se alle →</span>
+                            <h2 class="card-title" data-i18n="latestPosts">Siste innlegg</h2>
+                            <span class="card-action" data-i18n="seeAll">Se alle →</span>
                         </div>
                         <div class="card-body">
                             <div class="post-row" onclick="openPostDetail(1)">
                                 <img class="post-preview" src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=120&h=120&fit=crop" alt="">
                                 <div class="post-content">🚀 Spennende nyheter kommer! Følg med for å se hva vi har jobbet med...</div>
-                                <div style="text-align:right;"><div style="font-size:14px;font-weight:600;">1,245</div><div style="font-size:12px;color:var(--text-muted)">reaksjoner</div></div>
+                                <div style="text-align:right;"><div style="font-size:14px;font-weight:600;">1,245</div><div style="font-size:12px;color:var(--text-muted)" data-i18n="reactions">reaksjoner</div></div>
                             </div>
                             <div class="post-row" onclick="openPostDetail(2)">
                                 <img class="post-preview" src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=120&h=120&fit=crop" alt="">
                                 <div class="post-content">Vi feirer 100K følgere på tvers av alle plattformer! 🎉 Tusen takk for støtten!</div>
-                                <div style="text-align:right;"><div style="font-size:14px;font-weight:600;">892</div><div style="font-size:12px;color:var(--text-muted)">reaksjoner</div></div>
+                                <div style="text-align:right;"><div style="font-size:14px;font-weight:600;">892</div><div style="font-size:12px;color:var(--text-muted)" data-i18n="reactions">reaksjoner</div></div>
                             </div>
                             <div class="post-row">
                                 <img class="post-preview" src="https://images.unsplash.com/photo-1504805572947-34fad45aed93?w=120&h=120&fit=crop" alt="">
                                 <div class="post-content">Mandags-motivasjon: Hver stor reise starter med et lite skritt 💪</div>
-                                <div style="text-align:right;"><div style="font-size:14px;font-weight:600;">567</div><div style="font-size:12px;color:var(--text-muted)">reaksjoner</div></div>
+                                <div style="text-align:right;"><div style="font-size:14px;font-weight:600;">567</div><div style="font-size:12px;color:var(--text-muted)" data-i18n="reactions">reaksjoner</div></div>
                             </div>
                         </div>
                     </div>
                     <div>
                         <div class="card">
-                            <div class="card-header"><h2 class="card-title">Sidedetaljer</h2></div>
+                            <div class="card-header"><h2 class="card-title" data-i18n="pageDetails">Sidedetaljer</h2></div>
                             <div class="card-body">
                                 <div style="text-align:center;margin-bottom:20px;">
                                     <div style="width:80px;height:80px;background:var(--facebook);border-radius:50%;margin:0 auto 12px;display:flex;align-items:center;justify-content:center;font-size:32px;font-weight:700;color:#fff;">L</div>
                                     <div style="font-size:16px;font-weight:600;">Linda Simonsen</div>
-                                    <div style="font-size:13px;color:var(--text-secondary);">Facebook-side</div>
+                                    <div style="font-size:13px;color:var(--text-secondary);" data-i18n="facebookPage">Facebook-side</div>
                                 </div>
                                 <div style="display:flex;flex-direction:column;gap:12px;">
-                                    <div style="display:flex;justify-content:space-between;padding:12px;background:var(--bg-tertiary);border-radius:8px;"><span style="color:var(--text-secondary)">Sidetype</span><span style="font-weight:500">Creator</span></div>
-                                    <div style="display:flex;justify-content:space-between;padding:12px;background:var(--bg-tertiary);border-radius:8px;"><span style="color:var(--text-secondary)">Tilkoblet</span><span style="font-weight:500">15. jan 2026</span></div>
-                                    <div style="display:flex;justify-content:space-between;padding:12px;background:var(--bg-tertiary);border-radius:8px;"><span style="color:var(--text-secondary)">API-status</span><span style="color:var(--neon-green);font-weight:500">● Aktiv</span></div>
+                                    <div style="display:flex;justify-content:space-between;padding:12px;background:var(--bg-tertiary);border-radius:8px;"><span style="color:var(--text-secondary)" data-i18n="pageType">Sidetype</span><span style="font-weight:500">Creator</span></div>
+                                    <div style="display:flex;justify-content:space-between;padding:12px;background:var(--bg-tertiary);border-radius:8px;"><span style="color:var(--text-secondary)" data-i18n="connectedDate">Tilkoblet</span><span style="font-weight:500">15. jan 2026</span></div>
+                                    <div style="display:flex;justify-content:space-between;padding:12px;background:var(--bg-tertiary);border-radius:8px;"><span style="color:var(--text-secondary)" data-i18n="apiStatus">API-status</span><span style="color:var(--neon-green);font-weight:500">● <span data-i18n="active">Aktiv</span></span></div>
                                 </div>
                             </div>
                         </div>
                         <div class="card" style="margin-top:20px;">
-                            <div class="card-header"><h2 class="card-title">Cross-posting</h2></div>
+                            <div class="card-header"><h2 class="card-title" data-i18n="crossPosting">Cross-posting</h2></div>
                             <div class="card-body">
-                                <div style="font-size:13px;color:var(--text-secondary);margin-bottom:16px;">Automatisk deling mellom Meta-plattformer</div>
+                                <div style="font-size:13px;color:var(--text-secondary);margin-bottom:16px;" data-i18n="crossPostingDesc">Automatisk deling mellom Meta-plattformer</div>
                                 <div style="display:flex;justify-content:space-between;align-items:center;padding:16px;background:var(--bg-tertiary);border-radius:12px;">
                                     <div style="display:flex;align-items:center;gap:12px;">
                                         <div style="width:40px;height:40px;background:var(--instagram);border-radius:10px;display:flex;align-items:center;justify-content:center;"><svg viewBox="0 0 24 24" fill="currentColor" style="width:20px;height:20px;"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></div>
-                                        <div><div style="font-weight:500">Instagram</div><div style="font-size:12px;color:var(--text-secondary)">Del automatisk til Instagram</div></div>
+                                        <div><div style="font-weight:500">Instagram</div><div style="font-size:12px;color:var(--text-secondary)" data-i18n="shareToInstagram">Del automatisk til Instagram</div></div>
                                     </div>
                                     <div class="toggle-switch active" onclick="this.classList.toggle('active')"></div>
                                 </div>
@@ -1690,7 +1673,7 @@
             <!-- YouTube Detail Page -->
             <div class="page-view" id="page-youtube">
                 <div class="breadcrumb" style="margin-bottom:24px;">
-                    <span class="breadcrumb-item" onclick="showPage('connections')">Tilkoblinger</span>
+                    <span class="breadcrumb-item" onclick="showPage('connections')" data-i18n="connections">Tilkoblinger</span>
                     <span class="breadcrumb-sep">›</span>
                     <span class="breadcrumb-current">YouTube</span>
                 </div>
@@ -1701,7 +1684,7 @@
                             <div class="stat-change positive"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/></svg>+1,245</div>
                         </div>
                         <div class="stat-value">56,200</div>
-                        <div class="stat-label">Abonnenter</div>
+                        <div class="stat-label" data-i18n="subscribers">Abonnenter</div>
                     </div>
                     <div class="stat-card">
                         <div class="stat-header">
@@ -1709,30 +1692,30 @@
                             <div class="stat-change positive"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/></svg>+32%</div>
                         </div>
                         <div class="stat-value">1.2M</div>
-                        <div class="stat-label">Visninger (30d)</div>
+                        <div class="stat-label" data-i18n="views30d">Visninger (30d)</div>
                     </div>
                     <div class="stat-card">
                         <div class="stat-header">
                             <div class="stat-icon" style="background: linear-gradient(135deg, #10B981, #06B6D4);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:24px;height:24px"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
                         </div>
                         <div class="stat-value">4:32</div>
-                        <div class="stat-label">Gj.snitt visningstid</div>
+                        <div class="stat-label" data-i18n="avgViewTimeLabel">Gj.snitt visningstid</div>
                     </div>
                     <div class="stat-card">
                         <div class="stat-header">
                             <div class="stat-icon" style="background: linear-gradient(135deg, #F97316, #EF4444);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:24px;height:24px"><path d="M14.5 10c-.83 0-1.5-.67-1.5-1.5v-5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5z"/><path d="M20.5 10H19V8.5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg></div>
                         </div>
                         <div class="stat-value">47</div>
-                        <div class="stat-label">Videoer totalt</div>
+                        <div class="stat-label" data-i18n="videosTotal">Videoer totalt</div>
                     </div>
                 </div>
                 <div class="main-grid">
                     <div class="card">
                         <div class="card-header">
-                            <h2 class="card-title">Siste videoer</h2>
+                            <h2 class="card-title" data-i18n="latestVideos">Siste videoer</h2>
                             <div style="display:flex;gap:8px;">
-                                <button class="filter-btn active" style="padding:6px 12px;font-size:12px">Alle</button>
-                                <button class="filter-btn" style="padding:6px 12px;font-size:12px">Lange</button>
+                                <button class="filter-btn active" style="padding:6px 12px;font-size:12px" data-i18n="all">Alle</button>
+                                <button class="filter-btn" style="padding:6px 12px;font-size:12px" data-i18n="longVideos">Lange</button>
                                 <button class="filter-btn" style="padding:6px 12px;font-size:12px">Shorts</button>
                             </div>
                         </div>
@@ -1788,7 +1771,7 @@
                     </div>
                     <div>
                         <div class="card">
-                            <div class="card-header"><h2 class="card-title">Kanaldetaljer</h2></div>
+                            <div class="card-header"><h2 class="card-title" data-i18n="channelDetails">Kanaldetaljer</h2></div>
                             <div class="card-body">
                                 <div style="text-align:center;margin-bottom:20px;">
                                     <div style="width:80px;height:80px;background:var(--youtube);border-radius:50%;margin:0 auto 12px;display:flex;align-items:center;justify-content:center;font-size:32px;font-weight:700;color:#fff;">L</div>
@@ -1796,27 +1779,27 @@
                                     <div style="font-size:13px;color:var(--text-secondary);">YouTube-kanal</div>
                                 </div>
                                 <div style="display:flex;flex-direction:column;gap:12px;">
-                                    <div style="display:flex;justify-content:space-between;padding:12px;background:var(--bg-tertiary);border-radius:8px;"><span style="color:var(--text-secondary)">Monetisering</span><span style="color:var(--neon-green);font-weight:500">● Aktiv</span></div>
-                                    <div style="display:flex;justify-content:space-between;padding:12px;background:var(--bg-tertiary);border-radius:8px;"><span style="color:var(--text-secondary)">Tilkoblet</span><span style="font-weight:500">15. jan 2026</span></div>
+                                    <div style="display:flex;justify-content:space-between;padding:12px;background:var(--bg-tertiary);border-radius:8px;"><span style="color:var(--text-secondary)" data-i18n="monetization">Monetisering</span><span style="color:var(--neon-green);font-weight:500">● <span data-i18n="active">Aktiv</span></span></div>
+                                    <div style="display:flex;justify-content:space-between;padding:12px;background:var(--bg-tertiary);border-radius:8px;"><span style="color:var(--text-secondary)" data-i18n="connectedDate">Tilkoblet</span><span style="font-weight:500">15. jan 2026</span></div>
                                     <div style="display:flex;justify-content:space-between;padding:12px;background:var(--bg-tertiary);border-radius:8px;"><span style="color:var(--text-secondary)">API Quota</span><span style="font-weight:500">8,234 / 10,000</span></div>
-                                    <div style="display:flex;justify-content:space-between;padding:12px;background:var(--bg-tertiary);border-radius:8px;"><span style="color:var(--text-secondary)">API-status</span><span style="color:var(--neon-green);font-weight:500">● Aktiv</span></div>
+                                    <div style="display:flex;justify-content:space-between;padding:12px;background:var(--bg-tertiary);border-radius:8px;"><span style="color:var(--text-secondary)" data-i18n="apiStatus">API-status</span><span style="color:var(--neon-green);font-weight:500">● <span data-i18n="active">Aktiv</span></span></div>
                                 </div>
                             </div>
                         </div>
                         <div class="card" style="margin-top:20px;">
-                            <div class="card-header"><h2 class="card-title">Video-innstillinger</h2></div>
+                            <div class="card-header"><h2 class="card-title" data-i18n="videoSettings">Video-innstillinger</h2></div>
                             <div class="card-body">
                                 <div style="display:flex;flex-direction:column;gap:16px;">
                                     <div style="display:flex;justify-content:space-between;align-items:center;">
-                                        <div><div style="font-weight:500;margin-bottom:4px;">Auto-genererte undertekster</div><div style="font-size:12px;color:var(--text-secondary)">Legg til undertekster automatisk</div></div>
+                                        <div><div style="font-weight:500;margin-bottom:4px;" data-i18n="autoSubtitles">Auto-genererte undertekster</div><div style="font-size:12px;color:var(--text-secondary)" data-i18n="autoSubtitlesDesc">Legg til undertekster automatisk</div></div>
                                         <div class="toggle-switch active" onclick="this.classList.toggle('active')"></div>
                                     </div>
                                     <div style="display:flex;justify-content:space-between;align-items:center;">
-                                        <div><div style="font-weight:500;margin-bottom:4px;">Shorts fra lange videoer</div><div style="font-size:12px;color:var(--text-secondary)">Klipp automatisk ut høydepunkter</div></div>
+                                        <div><div style="font-weight:500;margin-bottom:4px;" data-i18n="shortsFromLong">Shorts fra lange videoer</div><div style="font-size:12px;color:var(--text-secondary)" data-i18n="clipHighlightsDesc">Klipp automatisk ut høydepunkter</div></div>
                                         <div class="toggle-switch" onclick="this.classList.toggle('active')"></div>
                                     </div>
                                     <div style="display:flex;justify-content:space-between;align-items:center;">
-                                        <div><div style="font-weight:500;margin-bottom:4px;">Thumbnail-forslag</div><div style="font-size:12px;color:var(--text-secondary)">AI-genererte miniatyrbilder</div></div>
+                                        <div><div style="font-weight:500;margin-bottom:4px;" data-i18n="thumbnailSuggestions">Thumbnail-forslag</div><div style="font-size:12px;color:var(--text-secondary)" data-i18n="aiThumbnails">AI-genererte miniatyrbilder</div></div>
                                         <div class="toggle-switch active" onclick="this.classList.toggle('active')"></div>
                                     </div>
                                 </div>
@@ -1830,7 +1813,7 @@
             <div class="page-view" id="page-content">
                 <div class="analytics-header">
                     <div class="analytics-filters">
-                        <button class="filter-btn active">Alle</button>
+                        <button class="filter-btn active" data-i18n="all">Alle</button>
                         <button class="filter-btn">Planlagt</button>
                         <button class="filter-btn">Publisert</button>
                         <button class="filter-btn">Utkast</button>
@@ -1878,7 +1861,7 @@
                                             <div style="max-width:300px;"><div style="font-weight:500;margin-bottom:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Vi feirer 100K følgere! 🎉</div><div style="font-size:12px;color:var(--text-secondary);">Tusen takk for all støtten...</div></div>
                                         </div>
                                     </td>
-                                    <td style="padding:16px;"><div style="display:flex;gap:4px;"><div class="platform-badge" style="background:var(--linkedin);width:24px;height:24px;"><svg viewBox="0 0 24 24" fill="currentColor" style="width:12px;height:12px"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></div></div></td>
+                                    <td style="padding:16px;"><div style="display:flex;gap:4px;"><div class="platform-badge" style="background:var(--facebook);width:24px;height:24px;"><svg viewBox="0 0 24 24" fill="currentColor" style="width:12px;height:12px"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></div></div></td>
                                     <td style="padding:16px;"><span class="post-status scheduled">Planlagt</span></td>
                                     <td style="padding:16px;"><div style="font-size:13px;">5. feb 2026</div><div style="font-size:12px;color:var(--text-muted);">12:00</div></td>
                                     <td style="padding:16px 24px;text-align:right;"><div class="post-actions" style="justify-content:flex-end;"><div class="post-action-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:16px;height:16px"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></div><div class="post-action-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:16px;height:16px"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg></div></div></td>
@@ -1941,10 +1924,6 @@
                         <div class="platform-toggle" onclick="this.classList.toggle('selected')">
                             <div class="platform-toggle-icon" style="background:#000"><svg viewBox="0 0 24 24" fill="#fff"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></div>
                             <span class="platform-toggle-name">TikTok</span>
-                        </div>
-                        <div class="platform-toggle" onclick="this.classList.toggle('selected')">
-                            <div class="platform-toggle-icon" style="background:var(--linkedin)"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></div>
-                            <span class="platform-toggle-name">LinkedIn</span>
                         </div>
                     </div>
                 </div>
@@ -2041,7 +2020,21 @@
                 export: 'Eksporter', followerGrowth: 'Følgervekst', fromPrevPeriod: 'fra forrige periode',
                 likes: 'Likerklikk', comments: 'Kommentarer', shares: 'Delinger', avgViewTime: 'Gj.snitt visningstid',
                 quickStats: 'Hurtigstatistikk', recentActivity: 'Siste aktivitet', platformStats: 'Plattformstatistikk',
-                fullView: 'Full visning', followers: 'følgere', subs: 'subs', eng: 'eng.'
+                fullView: 'Full visning', followers: 'følgere', subs: 'subs', eng: 'eng.',
+                connected: 'Tilkoblet', account: 'Konto', channel: 'Kanal', subscribers: 'Abonnenter',
+                connectedDate: 'Tilkoblet', disconnect: 'Koble fra', connect: 'Koble til',
+                notConnected: 'Ikke tilkoblet', notConfigured: 'Ikke konfigurert', status: 'Status', pageLabel: 'Side',
+                addPlatform: 'Legg til plattform', connectMoreSocial: 'Koble til flere sosiale medier',
+                yourUrl: 'Din URL', displayName: 'Visningsnavn', bio: 'Bio', links: 'Lenker', addLink: 'Legg til lenke', saveChanges: 'Lagre endringer',
+                profile: 'Profil', security: 'Sikkerhet', notifications: 'Varsler', billing: 'Fakturering', team: 'Team',
+                accountDetails: 'Kontodetaljer', accountType: 'Kontotype', lastSync: 'Siste synk', lastSyncAgo: 'For 5 min siden', apiStatus: 'API-status', active: 'Aktiv',
+                bestTimes: 'Beste tidspunkter', basedOnFollowers: 'Basert på når følgerne dine er aktive',
+                pageDetails: 'Sidedetaljer', pageType: 'Sidetype', channelDetails: 'Kanaldetaljer',
+                sideLikes: 'Sideliker', reach30d: 'Rekkevidde (30d)', postsTotal: 'Innlegg totalt',
+                latestPosts: 'Siste innlegg', reactions: 'reaksjoner', autoSubtitles: 'Auto-genererte undertekster', autoSubtitlesDesc: 'Legg til undertekster automatisk',
+                shareToInstagram: 'Del automatisk til Instagram', crossPosting: 'Cross-posting', crossPostingDesc: 'Automatisk deling mellom Meta-plattformer',
+                businessAccount: 'Business-konto', facebookPage: 'Facebook-side', videosTotal: 'Videoer totalt', views30d: 'Visninger (30d)', avgViewTimeLabel: 'Gj.snitt visningstid', latestVideos: 'Siste videoer', longVideos: 'Lange', monetization: 'Monetisering', videoSettings: 'Video-innstillinger', shortsFromLong: 'Shorts fra lange videoer', clipHighlightsDesc: 'Klipp automatisk ut høydepunkter', thumbnailSuggestions: 'Thumbnail-forslag', aiThumbnails: 'AI-genererte miniatyrbilder',
+                february2026: 'Februar 2026',
             },
             en: {
                 dashboard: 'Dashboard', calendar: 'Calendar', analytics: 'Analytics',
@@ -2064,7 +2057,21 @@
                 export: 'Export', followerGrowth: 'Follower growth', fromPrevPeriod: 'from previous period',
                 likes: 'Likes', comments: 'Comments', shares: 'Shares', avgViewTime: 'Avg. view time',
                 quickStats: 'Quick stats', recentActivity: 'Recent activity', platformStats: 'Platform stats',
-                fullView: 'Full view', followers: 'followers', subs: 'subs', eng: 'eng.'
+                fullView: 'Full view', followers: 'followers', subs: 'subs', eng: 'engagement',
+                connected: 'Connected', account: 'Account', channel: 'Channel', subscribers: 'Subscribers',
+                connectedDate: 'Connected', disconnect: 'Disconnect', connect: 'Connect',
+                notConnected: 'Not connected', notConfigured: 'Not configured', status: 'Status', pageLabel: 'Page',
+                addPlatform: 'Add platform', connectMoreSocial: 'Connect more social media',
+                yourUrl: 'Your URL', displayName: 'Display name', bio: 'Bio', links: 'Links', addLink: 'Add link', saveChanges: 'Save changes',
+                profile: 'Profile', security: 'Security', notifications: 'Notifications', billing: 'Billing', team: 'Team',
+                accountDetails: 'Account details', accountType: 'Account type', lastSync: 'Last sync', lastSyncAgo: '5 min ago', apiStatus: 'API status', active: 'Active',
+                bestTimes: 'Best times to post', basedOnFollowers: 'Based on when your followers are active',
+                pageDetails: 'Page details', pageType: 'Page type', channelDetails: 'Channel details',
+                sideLikes: 'Page likes', reach30d: 'Reach (30d)', postsTotal: 'Posts total',
+                latestPosts: 'Latest posts', reactions: 'reactions', autoSubtitles: 'Auto-generated captions', autoSubtitlesDesc: 'Add captions automatically',
+                shareToInstagram: 'Share automatically to Instagram', crossPosting: 'Cross-posting', crossPostingDesc: 'Automatic sharing across Meta platforms',
+                businessAccount: 'Business account', facebookPage: 'Facebook Page', videosTotal: 'Videos total', views30d: 'Views (30d)', avgViewTimeLabel: 'Avg. view time', latestVideos: 'Latest videos', longVideos: 'Long', monetization: 'Monetization', videoSettings: 'Video settings', shortsFromLong: 'Shorts from long videos', clipHighlightsDesc: 'Automatically clip out highlights', thumbnailSuggestions: 'Thumbnail suggestions', aiThumbnails: 'AI-generated thumbnails',
+                february2026: 'February 2026',
             }
         };
 

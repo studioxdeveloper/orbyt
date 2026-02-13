@@ -38,7 +38,7 @@ Mobil-først prototype med følgende skjermer:
 | **Profile** | Brukerprofil med Orbit-visualisering av tilkoblede plattformer |
 
 ### Funksjoner i app:
-- ✅ Cross-platform publishing (Instagram, Facebook, LinkedIn, YouTube, TikTok, X)
+- ✅ Cross-platform publishing (Instagram, Facebook, YouTube, TikTok, X)
 - ✅ Plattformstatistikk med følgertall
 - ✅ Planlagte innlegg
 - ✅ AI-assistert tekstgenerering (UI)
@@ -97,7 +97,6 @@ Offentlig landingsside: `mysocial.life/lindasimonsen`
 ### Plattformfarger
 - Instagram: Gradient oransje → rosa
 - Facebook: #1877F2
-- LinkedIn: #0A66C2
 - YouTube: #FF0000
 - TikTok: Svart/hvit
 - X: Svart
